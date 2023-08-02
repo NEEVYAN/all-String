@@ -30,15 +30,19 @@ export default function Navbar(props) {
                 </li>
               </ul>
 
-              {/* <div className="red" onClick={bg("red")} >🔴</div> */}
-              {/* <div className="green" onClick={props.ToggleMode}>🟢</div>
-              <div className="blue" onClick={props.ToggleMode}>🔵</div>
-              <div className="purple" onClick={props.ToggleMode}>🟣</div> */}
+              <div className="bg-success my-2 mx-2" onClick={()=>{props.ToggleMode('success')}} style={{cursor:"pointer",height:"20px",width:"20px"}}></div>
+              <div className="bg-primary my-2 mx-2" onClick={()=>{props.ToggleMode('primary')}} style={{cursor:"pointer",height:"20px",width:"20px"}}></div>
+              <div className="bg-danger my-2 mx-2" onClick={()=>{props.ToggleMode('danger')}} style={{cursor:"pointer",height:"20px",width:"20px"}}></div>
+              <div className="bg-warning my-2 mx-2" onClick={()=>{props.ToggleMode('warning')}} style={{cursor:"pointer",height:"20px",width:"20px"}}></div>
+              <div className="bg-light my-2 mx-2" onClick={()=>{props.ToggleMode('light')}} style={{cursor:"pointer",height:"20px",width:"20px",border:"1px solid #E2DFD2"}}></div>
+              <div className="bg-dark my-2 mx-2" onClick={()=>{props.ToggleMode('dark')}} style={{cursor:"pointer",height:"20px",width:"20px",border:"1px solid #E2DFD2"}}></div>
 
-              <div className={`form-check form-switch text-${props.mode==="light"?"dark":"light"}`}>
-                  <input className="form-check-input" onClick={props.ToggleMode} type="checkbox" role="switch" id="flexSwitchCheckDefault"/>
+
+
+              {/* <div className={`form-check form-switch text-${props.mode==="light"?"dark":"light"}`}>
+                  <input className="form-check-input" onClick={()=>{props.ToggleMode('null');}} type="checkbox" role="switch" id="flexSwitchCheckDefault"/>
                   <label className="form-check-label" for="flexSwitchCheckDefault">{props.mode} Mode</label>
-              </div>
+              </div> */}
               
 
             </div>

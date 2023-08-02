@@ -1,40 +1,46 @@
 import React,{useState}from 'react'
 
-export default function About() {
+export default function About(props) {
 
-  const [myStyle,newMyStyle]=useState(
-    {
-        padding:16,
-        color: 'white',
-        backgroundColor: 'black',
-    }
-  )
-  const [text,setText]=useState("Enable Light Mode");
+//   const [myStyle,newMyStyle]=useState(
+//     {
+//         padding:16,
+//         color: 'black',
+//         backgroundColor: 'white',
+//     }
+//   )
 
-  const darkMode=()=>
-  {
-        if(myStyle.color==='white')
-        {
-            newMyStyle({
-                padding:16,
-                color: 'black',
-                backgroundColor: 'white',
-            })
-            setText("Enable Dark Mode");
-        }
-        else if(myStyle.color==='black')
-        {
-            newMyStyle({
-                padding:16,
-                color: 'white',
-                backgroundColor: 'black',
-            })
-            setText("Enable Light Mode");
-        }
+  let myStyle = {
+    color:props.mode==='dark'?'white':'#042743',
+    backgroundColor:props.mode==='dark'?'#042743':'white',
+    padding:16,
   }
+//   const [text,setText]=useState("Enable Light Mode");
+
+//   const darkMode=()=>
+//   {
+//         if(myStyle.color==='white')
+//         {
+//             newMyStyle({
+//                 padding:16,
+//                 color: 'black',
+//                 backgroundColor: 'white',
+//             })
+//             setText("Enable Dark Mode");
+//         }
+//         else if(myStyle.color==='black')
+//         {
+//             newMyStyle({
+//                 padding:16,
+//                 color: 'white',
+//                 backgroundColor: 'black',
+//             })
+//             setText("Enable Light Mode");
+//         }
+//   }
 
   return (
-    <div className='container my-5' style={myStyle} >
+    <div className='container my-5 ' style={myStyle}>
         <div className="accordion" id="accordionExample">
         <div className="accordion-item">
             <h2 className="accordion-header">
@@ -74,7 +80,7 @@ export default function About() {
         </div>
         </div>
 
-        <button className='my-3 btn btn-primary' onClick={darkMode}> {text} </button>
+        {/* <button className='my-3 btn btn-primary' onClick={darkMode}> {text} </button> */}
     </div>
   )
 }
