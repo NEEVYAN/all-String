@@ -20,10 +20,9 @@ export default function Form(props) {
     }
     const funCopy=()=>
     {
-        let newText=document.getElementById("myBox");
-        newText.select();
-        navigator.clipboard.writeText(newText.value);
-        alert("text copied "+newText.value);
+        
+        navigator.clipboard.writeText(text);
+        alert("text copied "+text);
 
     }
     const funRemoveExtraSpace=()=>
@@ -62,7 +61,7 @@ export default function Form(props) {
     </div>
     <div className="container my-3">
         <h4>Text summary</h4>
-        <p>{(text.split(" ").filter((element)=>{return element.length!==0}).length)} words, {text.length} character</p>
+        <p>{(text.split(/\s+/).filter((element)=>{return element.length!==0}).length)} words, {text.length} character</p>
         <h5>Preview</h5>
         <p>{text.length>0?text:"Nothing to preview"}</p>
         {/* <div className='box'>
